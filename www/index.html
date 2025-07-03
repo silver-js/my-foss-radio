@@ -8,26 +8,68 @@
     <script></script>
     <script type="module" src="main.js"></script>
   </head>
-  <body class="flex-column-spaced">
+  <body class="flex-spaced column">
 	<header>
 		<nav>
-			<ul>
-				<li id="fav-nav">&#9733;</li>
-				<li id="radio-nav">&#9835;</li>
-				<li id="config-nav">&#9776;</li>
+			<ul class="flex-spaced label-btn-list">
+				<li><label for="toggle-fav">&#9733;</label></li>
+				<li><label for="toggle-radio">&#9835;</label></li>
+				<li><label for="toggle-cfg">&#9776;</label></li>
 			</ul>
 		</nav>
 	</header>
-	<main class="flex-column-spaced flex-grow">
-		<section class="flex-grow scrollable">
-			<article id="nav-section"></article>
+	<main class="flex-spaced column grow-l">
+		<section class="grow-m container">
+			<input class="hidden" id="toggle-fav" name="nav-toggle" type="radio" checked/>
+			<article class="t-hidden" id="fav-nav">fav</article>
+
+			<input class="hidden" id="toggle-radio" name="nav-toggle" type="radio"/>
+			<article class="t-hidden flex-spaced column" id="radio-nav">
+				<h2>Radio Search</h2>
+				<div class="flex-spaced">
+					<h3>Search by:</h3>
+					<ul class="flex-evenly grow-l label-btn-list">
+						<li><label for="toggle-search-category">Category</label></li>
+						<li><label for="toggle-search-top">Top</label></li>
+						<li><label for="toggle-search-url">Type URL</label></li>
+					</ul>
+				</div>
+				<div class="grow-l scrollable">
+					<input class="hidden" type="radio" name="search-toggle" id="toggle-search-category" checked/>
+					<div class="t-hidden">
+						<ul id="category-search">
+							loading data...
+						</ul>
+					</div>
+
+					<input class="hidden" type="radio" name="search-toggle" id="toggle-search-top"/>
+					<div class="t-hidden">
+						<ul id="top-search">loading data...</ul>
+					</div>
+
+					<input class="hidden" type="radio" name="search-toggle" id="toggle-search-url"/>
+					<div class="t-hidden">
+						<label for="url-input">Insert radio URL</label>
+						<input type="text" placeholder="example.com"/>
+					</div>
+				</div>
+			</article>
+			
+			<input class="hidden" id="toggle-cfg" name="nav-toggle" type="radio"/>
+			<article class="t-hidden" id="config-nav">cgf</article>
 		</section>
-		<section class="flex-grow" id="radio-section">
+		<section class="grow-s" id="radio-section">
+			<audio id="audio-element"></audio>
+			<ul id="audio-controls">
+				<li value=1>Vol+</li>
+				<li value=0>Play</li>
+				<li value=-1>Vol-</li>
+			</ul>
 			radio info/controls
 		</section>
 	</main>
 	<footer>
-		footer
+		<pre id="audio-info"></pre>
 	</footer>
   </body>
   <!--
@@ -51,7 +93,9 @@
 	up:			&#8679;
 	down:		&#8681;
 
-
+	
+	categories: by-country / by-lang / by-tag
+	Top: votes / clicks / trending / random
 
   -->
 </html>

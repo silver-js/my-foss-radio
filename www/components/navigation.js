@@ -1,3 +1,4 @@
+/*
 const navSection = document.getElementById('nav-section');
 
 // Lists
@@ -43,5 +44,4 @@ document.getElementById('fav-nav').addEventListener('click', ()=>{navClick('fav'
 document.getElementById('radio-nav').addEventListener('click', ()=>{navClick('radio')});
 document.getElementById('config-nav').addEventListener('click', ()=>{navClick('menu')});
 navClick('fav');
-
-
+*/

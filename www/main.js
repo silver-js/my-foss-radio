@@ -1,4 +1,4 @@
-import './components/navigation.js';
+import './js/radio.js';
 import {getRadioConfig} from './js/fetcher.js';
 
 const updateRadios = async ()=>{
