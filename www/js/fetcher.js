@@ -1,14 +1,13 @@
 const headers = {
 	'User-Agent': 'github.com/silver-js/my-foss-radio', 'Access-Control-Allow-Origin': '*'
 }
-const protocol = window.location.protocol;
 const getBaseUrls = async ()=>{
 	try{
 		const res = await fetch(`https://all.api.radio-browser.info/json/servers`, {
 			method: "GET",
   			headers: {
     			"Content-Type": "application/json",
-				"Access-Control-Allow-Origin": "*"
+				  "Access-Control-Allow-Origin": "*"
   			}
 		});
 		if(res.ok){
@@ -26,7 +25,7 @@ const getBaseUrls = async ()=>{
 
 const getServerConfig = async (baseUrl)=>{
 	try{
-		const res = await fetch(`${protocol}//${baseUrl}/json/config`, {method: 'GET', headers});
+		const res = await fetch(`https://${baseUrl}/json/config`, {method: 'GET', headers});
 		if(res.ok){
 			const data = await res.json();
 			return data;

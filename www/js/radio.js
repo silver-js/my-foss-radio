@@ -43,7 +43,7 @@ controls.forEach((ctrl, id)=>{
 
 
 
-let radioUrl = 'http://spritelayerradio.com:8010'
+let radioUrl = 'https://spritelayerradio.com:8010'
 
 
 
