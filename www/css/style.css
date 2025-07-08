@@ -99,4 +99,7 @@ input:checked + .t-hidden{
 }
 #radio-section{
 }
+#audio-canv{
+  width: 100%;
+}
 

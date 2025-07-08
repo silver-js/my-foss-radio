@@ -6,7 +6,7 @@
     <title>My FOSS Radio</title>
     <link href="css/style.css" rel="stylesheet">
     <script></script>
-    <script type="module" src="main.js"></script>
+    <script type="module" src="main.js?v=1"></script>
   </head>
   <body class="flex-spaced column">
 	<header>
@@ -59,7 +59,7 @@
 			<article class="t-hidden" id="config-nav">cgf</article>
 		</section>
 		<section class="grow-s" id="radio-section">
-			<audio id="audio-element"></audio>
+		  <canvas id="audio-canv"></canvas>
 			<ul id="audio-controls">
 				<li value=1>Vol+</li>
 				<li value=0>Play</li>

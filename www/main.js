@@ -1,8 +1,16 @@
 import './js/radio.js';
-import {getRadioConfig} from './js/fetcher.js';
+import {fetcher, getConfig} from './js/fetcher.js';
 
-const updateRadios = async ()=>{
-	const radioConf = await getRadioConfig();
-	console.log(radioConf);
+
+const d = document.getElementById('category-search');
+
+
+const loadAppData = async ()=>{
+  const cfgList = await getConfig();
+  console.log(cfgList)
+  d.innerHTML = 'finished loading'
 }
-updateRadios();
+loadAppData();
+
+
+//updateRadios();

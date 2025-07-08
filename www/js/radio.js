@@ -1,29 +1,44 @@
 // UI Elements
-
-const elementTag = document.getElementById('audio-element');
 const controls = document.querySelectorAll('#audio-controls li');
 const infoTag = document.getElementById('audio-info');
+const rAudio = new Audio()
+
+// test
+
+setInterval(()=>{
+  console.log(rAudio.currentTime);
+  //console.log(rAudio.textTracks);
+  console.log(rAudio.videoTracks.length);
+  //console.log(rAudio.duration);
+  //console.log(rAudio.audioTracks.length);
+  const tRanges = rAudio.played;
+  console.log(tRanges.start(0));
+  console.log(tRanges.end(0));
+  console.log('---------------------');
+  
+}, 2000);
 
 // audio methods
+console.log(rAudio)
 
 let volume = 5;
 let audioSource  = '';
 
 const setVolume = ()=>{
 	const step = 1 - volume / 10;
-	elementTag.volume = step ** 2 - step * 2 + 1;
+	rAudio.volume = step ** 2 - step * 2 + 1;
 }
 
 const playPause = (f)=>{
-	if(elementTag.paused) f = true;
-	elementTag.pause();
-	elementTag.src = '';
+	if(rAudio.paused) f = true;
+	rAudio.pause();
+	rAudio.src = '';
 	if(f && audioSource.length > 3){
-		elementTag.src = audioSource;
-		elementTag.load();
-		elementTag.play();
+		rAudio.src = audioSource;
+		rAudio.load();
+		rAudio.play();
 	}
-	return !elementTag.paused
+	return !rAudio.paused
 }
 
 // UI
@@ -42,10 +57,7 @@ controls.forEach((ctrl, id)=>{
 })
 
 
-
 let radioUrl = 'https://spritelayerradio.com:8010'
-
-
 
 
 let activeRadio = null;
