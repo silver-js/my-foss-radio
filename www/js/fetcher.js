@@ -51,3 +51,18 @@ export const getConfig = async ()=>{
 	}
 	return {ok: true, data: confList};
 }
+
+
+// source fetcher
+
+export const getSourceData = async (sUrl)=>{
+	try{
+		const res = await fetch(`${sUrl}/status-json.xsl`);
+		const data = await res.json();
+		return data;
+	}
+	catch(err){
+		console.log(err);
+		return false;
+	}
+}

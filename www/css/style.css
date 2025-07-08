@@ -39,6 +39,10 @@ footer pre{
 	display: flex;
 	justify-content: space-evenly;
 }
+.flex-center{
+	display: flex;
+	justify-content: center;
+}
 .column{
 	flex-direction: column;
 }
@@ -46,10 +50,10 @@ footer pre{
 	flex-grow: 1;
 }
 .grow-m{
-	flex-grow: 2;
+	flex-grow: 3;
 }
 .grow-l{
-	flex-grow: 3;
+	flex-grow: 6;
 }
 .label-btn-list li label{
 	width: 100%;
@@ -90,16 +94,68 @@ footer pre{
 input:checked + .t-hidden{
 	transform: scale(1);
 }
-#radio-nav{
-}
+
+
 #radio-nav ul li label{
 	color: #abc;
 	padding: .3rem;
 	border-radius: 3px;
 }
+
+
+
+
 #radio-section{
+	
 }
-#audio-canv{
-  width: 100%;
+
+
+
+.source-wrapper{
+	position: relative;
+	align-items: center;
+}
+.source-wrapper img{
+	background: red;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+}
+.source-wrapper div{
+	align-items: center;
+	width: 4rem;
+	height: 4rem;
+	box-shadow: 0 0 1px 2px #000, 0 0 1px 4px #fff;
+	text-shadow: -1px -1px #000, -1px 1px #000, 1px -1px #000, 1px 1px #000, -2px -2px #fff, -2px 2px #fff, 2px -2px #fff, 2px 2px #fff;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 4rem;
+}
+
+
+
+input[type="range"]{
+	writing-mode: vertical-lr;
+	appearance: none;
+	background: linear-gradient(#a12, #061);
+	border-radius: .5rem;
+	box-shadow: 0 0 1px 2px #000, 0 0 1px 4px #fff;
+	cursor: text;
+	width: 1rem;
+}
+input[type="range"]::-webkit-slider-thumb{
+	-webkit-appearance: none; /* Override default look */
+	appearance: none;
+	background-color: #888;
+	box-shadow: 0 0 1px 2px #000, 0 0 1px 4px #fff;
+	height: .5rem;
+	width: 1.5rem;    
+}
+#audio-controls{
+	padding: 1rem;
+	font-size: 1.5rem;
+	gap: .5rem;
+	text-align: center;
 }
 

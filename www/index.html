@@ -19,7 +19,7 @@
 		</nav>
 	</header>
 	<main class="flex-spaced column grow-l">
-		<section class="grow-m container">
+		<section class="grow-l container">
 			<input class="hidden" id="toggle-fav" name="nav-toggle" type="radio" checked/>
 			<article class="t-hidden" id="fav-nav">fav</article>
 
@@ -58,14 +58,17 @@
 			<input class="hidden" id="toggle-cfg" name="nav-toggle" type="radio"/>
 			<article class="t-hidden" id="config-nav">cgf</article>
 		</section>
-		<section class="grow-s" id="radio-section">
-		  <canvas id="audio-canv"></canvas>
-			<ul id="audio-controls">
-				<li value=1>Vol+</li>
-				<li value=0>Play</li>
-				<li value=-1>Vol-</li>
+		<section class="grow-s flex-spaced" id="radio-section">
+			<article class="flex-center column grow-m source-wrapper">
+				<div class="flex-center clickable" id="play-btn">
+					<p>&#8227;</p>
+				</div>
+				<h4>Source Info</h4>
+			</article>
+			<ul class="flex-center column" id="audio-controls">
+				<li class="flex-center grow-l"><input type="range" max="10" value="5"/></li>
+				<li>&#128264;&#9887;</li>
 			</ul>
-			radio info/controls
 		</section>
 	</main>
 	<footer>
@@ -80,6 +83,7 @@
 	star 		&#9733;
 	empty star	&#9733;
 
+	speaker		&#128264;
 	music note	&#9835;
 	lines		&#9887;
 	play btn	&#8227;
