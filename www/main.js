@@ -99,6 +99,14 @@ getRadioData()
 
 
 */
+// Methods
+const radioSource = async (url)=>{
+  const d = await getSourceData(url);
+	if(d){
+		audio.setSource(d.icestats.source.listenurl);
+	}
+}
+
 // Radio UI
 
 
@@ -111,15 +119,22 @@ getRadioData()
 const infoTag = document.getElementById('audio-info');
 
 const playBtn = document.getElementById('play-btn');
-const handlePlay = async ()=>{
-	console.log('play clicked');
-	const d = await getSourceData('https://spritelayerradio.com:8010');
-	if(d){
-		audio.setSource(d.icestats.source.listenurl);
-	}
-	console.log(d, audio.state);
+playBtn.addEventListener('click', audio.playPause);
+
+const volSlider = document.getElementById('vol-slider');
+volSlider.addEventListener('input', (e)=>{
+  audio.setVolume(e.target.value);
+})
+
+
+// tabs
+const favClick = (x)=>{
+  radioSource(x);
 }
-playBtn.addEventListener('click', handlePlay);
-
-
+const favList = document.getElementById('fav-list');
+console.log(favList)
+const slButton = document.createElement('li');
+favList.appendChild(slButton);
+slButton.innerHTML = "testing";
+slButton.addEventListener('click',()=>{favClick('https://spritelayerradio.com:8010')})
 
