@@ -137,14 +137,4 @@ const handlePlay = async ()=>{
 playBtn.addEventListener('click', handlePlay);
 
 
-// tabs
-const favClick = (x)=>{
-  radioSource(x);
-}
-const favList = document.getElementById('fav-list');
-console.log(favList)
-const slButton = document.createElement('li');
-favList.appendChild(slButton);
-slButton.innerHTML = "testing";
-slButton.addEventListener('click',()=>{favClick('https://spritelayerradio.com:8010')})
 
