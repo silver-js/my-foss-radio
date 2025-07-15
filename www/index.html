@@ -21,7 +21,11 @@
 	<main class="flex-spaced column grow-l">
 		<section class="grow-l container">
 			<input class="hidden" id="toggle-fav" name="nav-toggle" type="radio" checked/>
-			<article class="t-hidden" id="fav-nav">fav</article>
+			<article class="t-hidden scrollable" id="fav-nav">
+				<ul class="btn-list" id="fav-list"></ul>
+				
+				
+			</article>
 
 			<input class="hidden" id="toggle-radio" name="nav-toggle" type="radio"/>
 			<article class="t-hidden flex-spaced column" id="radio-nav">
@@ -71,6 +75,14 @@
 			</ul>
 		</section>
 	</main>
+	<aside>
+		<input class="hidden" id="toggle-fav-menu" type="checkbox"/>
+		<div class="t-hidden dialog flex-center">
+			<label for="toggle-fav-menu"></label>
+			<ul class="d-content btn-list" id="fav-menu-list">
+			<ul>
+		</div>
+	</aside>
 	<footer>
 		<pre id="audio-info"></pre>
 	</footer>
