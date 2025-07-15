@@ -35,11 +35,13 @@ const setVolume = (volume)=>{
 		audioStop();
 		myAudio.volume = 0;
 	}else{
-		audioStart();
-		const step = volume / 10;
+	  if(myAudio.paused){
+		  audioStart();
+	  }
+		const step = 1 - volume * .1;
 		myAudio.volume = step ** 2 - step * 2 + 1;
-		console.log(volume, myAudio.volume);
 	}
+	console.log(myAudio.volume);
 }
 
 // Audio Source
