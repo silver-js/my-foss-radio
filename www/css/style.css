@@ -22,7 +22,6 @@ header nav li{
 	flex-grow: 1;
 }
 section{
-	border: 1px solid red;
 	width: 100%;
 	max-width: 100vmin;
 	margin: 0 auto;
@@ -57,32 +56,40 @@ footer pre{
 	flex-grow: 6;
 }
 .label-btn-list li label{
-	width: 100%;
-	display: block;
-	transition: .2s;
-	position: relative;
-	top: 0;
 	background: #024;
 	color: #048;
+	width: 100%;
+	height: 100%;
+	display: block;
 	text-align: center;
 	box-shadow: -1px -1px #fff, -1px 0 #fff, 0 -1px #fff, 1px 1px #000, 1px 0 #000, 0 1px #000;
 }
-.label-btn-list li label:hover{
+.btn-list li{
+	margin: .5rem .3rem;
+	box-shadow: 0 0 2px 1px #fff;
+	border-radius: 4px;
+}
+.btn-list li, .label-btn-list li label{
+	transition: .2s;
+	position: relative;
+	top: 0;
+}
+.btn-list li:hover, .label-btn-list li label:hover{
 	color: #08f;
 	top: 1px;
 }
-.label-btn-list li label:active{
+.btn-list li:active, .label-btn-list li label:active{
 	color: #0ff;
 	top: 2px;
 }
 .container, .scrollable{
 	position: relative;
 }
-.container > *, .scrollable > *{
+.container > *, .scrollable > *:first-child{
 	position: absolute;
 	inset: 0;
 }
-.scrollable > *{
+.scrollable > *:first-child{
 	overflow-y: scroll;
 }
 .hidden{
@@ -95,6 +102,44 @@ footer pre{
 input:checked + .t-hidden{
 	transform: scale(1);
 }
+
+
+
+
+
+.fav-button{
+	display: flex;
+}
+.fav-button h3{
+	padding:  0 1rem;
+	flex-grow: 100;
+	align-content: center;
+}
+.fav-button div{
+	padding: 1rem;
+}
+
+.dialog{
+	position: fixed;
+	inset: 0;
+	align-items: center;
+}
+.dialog>label{
+	position: absolute;
+	background: #0005;
+	inset: 0;
+}
+.dialog>.d-content{
+	position: relative;
+	background: #000;
+	box-shadow: 0 0 2px 1px #fff;
+	border-radius: 4px;
+}
+.dialog>.d-content li{
+	padding: 1rem;
+	margin: .5rem;
+}
+
 
 
 #radio-nav ul li label{

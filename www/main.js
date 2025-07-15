@@ -1,3 +1,6 @@
+import {MyFavs} from './components/elements.js';
+
+
 import audio from './js/radio.js';
 import {getConfig, getSourceData} from './js/fetcher.js';
 
@@ -109,8 +112,9 @@ const radioSource = async (url)=>{
 
 // Radio UI
 
-
-
+// Fav List
+const favDomList = document.getElementById('fav-list');
+const favList = new MyFavs(favDomList, audio.setSource);
 
 
 
@@ -118,13 +122,19 @@ const radioSource = async (url)=>{
 
 const infoTag = document.getElementById('audio-info');
 
-const playBtn = document.getElementById('play-btn');
-playBtn.addEventListener('click', audio.playPause);
 
-const volSlider = document.getElementById('vol-slider');
-volSlider.addEventListener('input', (e)=>{
-  audio.setVolume(e.target.value);
-})
+
+const playBtn = document.getElementById('play-btn');
+const handlePlay = async ()=>{
+	console.log('play clicked');
+	const d = await getSourceData('https://spritelayerradio.com:8010');
+	if(d){
+		audio.setSource(d.icestats.source.listenurl);
+		console.log(d.icestats.source.listenurl);
+	}
+	console.log(d, audio.state);
+}
+playBtn.addEventListener('click', handlePlay);
 
 
 // tabs
