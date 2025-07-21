@@ -1,6 +1,5 @@
-import {MyFavs} from './components/elements.js';
-
-
+import {MyFavs, SourceSection} from './components/elements.js';
+import {aniTimer} from './js/timers.js'
 import audio from './js/radio.js';
 import {getConfig, getSourceData} from './js/fetcher.js';
 

@@ -27,8 +27,6 @@ const playPause = async ()=>{
 	return !myAudio.paused
 }
 
-
-
 // Volume Control
 const setVolume = (volume)=>{
 	if(!volume){
