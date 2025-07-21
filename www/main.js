@@ -79,19 +79,6 @@ const refreshInfo = ()=>{
 }
 refreshInfo();
 
-const getRadioData = async ()=>{
-	try{
-		const res = await fetch(`${radioUrl}/status-json.xsl`);
-		const data = await res.json();
-		activeRadio = data.icestats.source;
-		audioSource = activeRadio.listenurl;
-		refreshNowPlaying(true);
-	}
-	catch(err){
-		console.log(err);
-	}
-}
-getRadioData()
 
 
 
@@ -102,13 +89,14 @@ getRadioData()
 
 */
 // Methods
+/*
 const radioSource = async (url)=>{
   const d = await getSourceData(url);
 	if(d){
 		audio.setSource(d.icestats.source.listenurl);
 	}
 }
-
+*/
 // Radio UI
 
 // Fav List
@@ -136,4 +124,7 @@ const handlePlay = async ()=>{
 playBtn.addEventListener('click', handlePlay);
 
 
-
+aniTimer(()=>{
+	console.log('Checking');
+	console.log(audio.data());
+},1000);

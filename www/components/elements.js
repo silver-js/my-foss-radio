@@ -65,7 +65,10 @@ const favData = new function(){
 	}
 }
 
-favData.add('SpriteLayer Radio' ,'https://spritelayerradio.com/listen/spritelayer_video_game_radio/all');	// just a test value
+favData.add('SpriteLayer Radio', 'https://spritelayerradio.com:8010/all,icecast');	// just a test value
+favData.add('Otaku Radio', 'https://stream-mixtape-geo.ntslive.net/mixtape36,plain');	// just a test value
+favData.add('Radio Paralax', 'http://radio-paralax.de:8000/,shoutcast');	// just a test value
+favData.add('DanceWave', 'https://dancewave.online/dance.mp3,shoutcast');	// just a test value
 
 
 const favMenu = new function(){
